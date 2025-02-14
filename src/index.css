@@ -1,0 +1,102 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 150 100% 3%;
+    --foreground: 150 100% 98%;
+    
+    --card: 150 100% 5%;
+    --card-foreground: 150 100% 98%;
+ 
+    --popover: 150 100% 4%;
+    --popover-foreground: 150 100% 98%;
+ 
+    --primary: 150 100% 50%;
+    --primary-foreground: 150 100% 10%;
+ 
+    --secondary: 150 30% 10%;
+    --secondary-foreground: 150 100% 98%;
+ 
+    --muted: 150 30% 15%;
+    --muted-foreground: 150 30% 70%;
+ 
+    --accent: 150 30% 15%;
+    --accent-foreground: 150 100% 98%;
+ 
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 150 100% 98%;
+ 
+    --border: 150 30% 20%;
+    --input: 150 30% 20%;
+    --ring: 150 100% 50%;
+ 
+    --radius: 0.75rem;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-kihelot-dark text-foreground antialiased;
+  }
+  input, button {
+    @apply font-medium;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-black/10 backdrop-blur-lg border border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-black/20 backdrop-blur-lg border border-white/10 rounded-lg shadow-xl;
+  }
+
+  .hover-glow {
+    @apply hover:shadow-[0_0_15px_rgba(0,255,157,0.5)] transition-shadow duration-300;
+  }
+
+  .input-focus {
+    @apply focus:ring-2 focus:ring-primary/50 focus:outline-none;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.5s ease-out forwards;
+}
+
+/* Custom Scrollbar Styles */
+.scrollbar-thin {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(69, 255, 143, 0.849) rgba(0, 0, 0, 0.1); /* Firefox */
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 8px; /* Custom width */
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: rgba(0, 132, 2, 0.1); /* Track color */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(16, 94, 0, 0.4); /* Thumb color */
+  border-radius: 4px;
+}
