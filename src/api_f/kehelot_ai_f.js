@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Set up Axios instance
-const API_BASE_URL = "https://kehelot-backend.onrender.com/kehelot_ai";
+const API_BASE_URL = "https://kehelotapi.vercel.app/kehelot_ai";
 
 const api = axios.create({
   baseURL: API_BASE_URL,
